@@ -1,0 +1,16 @@
+function outPlHands() {
+  document.getElementById("pl1Hand").innerText = allPlHands[0];
+  document.getElementById("pl2Hand").innerText = allPlHands[1];
+}
+
+function allowThrghDice() {
+  document.getElementById("thrghDice").disabled = false;
+  document.getElementById("remove2Dice").disabled = true;
+  document.getElementById("removeSumDice").disabled = true;
+}
+
+function prohibitThrghDice() {
+  document.getElementById("thrghDice").disabled = true;
+  document.getElementById("remove2Dice").disabled = false;
+  document.getElementById("removeSumDice").disabled = false;
+}

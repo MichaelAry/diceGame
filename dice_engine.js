@@ -29,7 +29,7 @@ function rollDice() {
   } else {
     document.getElementById("pl2Dice").innerText = `${dice1}, ${dice2}`;
   }
-  permitThrghDice();
+  prohibitThrghDice();
 }
 
 function remove2Dice() {
@@ -79,23 +79,6 @@ function chckWin() {
 function chngCrrntPl() {
   currentPlayer = currentPlayer === 1 ? 2 : 1;
   document.getElementById("plTurn").innerText = `ход игрока ${currentPlayer}`;
-}
-
-function outPlHands() {
-  document.getElementById("pl1Hand").innerText = allPlHands[0];
-  document.getElementById("pl2Hand").innerText = allPlHands[1];
-}
-
-function allowThrghDice() {
-  document.getElementById("thrghDice").disabled = false;
-  document.getElementById("remove2Dice").disabled = true;
-  document.getElementById("removeSumDice").disabled = true;
-}
-
-function permitThrghDice() {
-  document.getElementById("thrghDice").disabled = true;
-  document.getElementById("remove2Dice").disabled = false;
-  document.getElementById("removeSumDice").disabled = false;
 }
 
 function resetGame() {
