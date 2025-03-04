@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кубики МАВ_БСА</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Кубики МАВ_БСА</h1>
+    <div id="plTurn">ход игрока 1</div>
+    <div class="player-section">
+      <h2>игрок 1</h2>
+      <p>числа: <span id="pl1Hand"></span></p>
+      <p>кубики: <span id="pl1Dice">-</span></p>
+    </div>
+    <div class="player-section">
+      <h2>игрок 2</h2>
+      <p>числа: <span id="pl2Hand"></span></p>
+      <p>кубики: <span id="pl2Dice">-</span></p>
+    </div>
+    <br />
+    <button onclick="rollDice()" id="thrghDice">бросить кубики</button>
+    <button onclick="remove2Dice()" id="remove2Dice">
+      убрать числа раздельно
+    </button>
+    <button onclick="removeSumDice()" id="removeSumDice">
+      убрать сумму чисел
+    </button>
+    <button onclick="resetGame()">начать заново</button>
+    <script src="dice_engine.js"></script>
+  </body>
+</html>
