@@ -25,9 +25,9 @@ function rollDice() {
   diceSum = dice1 + dice2;
 
   if (currentPlayer === 1) {
-    document.getElementById("pl1Dice").innerText = `${dice1}, ${dice2}`;
+    document.getElementById("pl1Dice").innerText = `числа раздельно: ${dice1}, ${dice2}\n сумма: ${diceSum}`;
   } else {
-    document.getElementById("pl2Dice").innerText = `${dice1}, ${dice2}`;
+    document.getElementById("pl2Dice").innerText = `числа раздельно: ${dice1}, ${dice2}\n сумма: ${diceSum}`;
   }
   prohibitThrghDice();
 }
