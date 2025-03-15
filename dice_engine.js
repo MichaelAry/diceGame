@@ -48,6 +48,26 @@ function remove2Dice() {
   chngCrrntPl();
 }
 
+function remove2ndDice() {
+  allPlHands[currentPlayer - 1] = allPlHands[currentPlayer - 1].filter(
+    (die) => die !== dice2
+  );
+  outPlHands();
+  allowThrghDice();
+  chckWin();
+  chngCrrntPl();
+}
+
+function remove1stDice() {
+  allPlHands[currentPlayer - 1] = allPlHands[currentPlayer - 1].filter(
+    (die) => die !== dice1
+  );
+  outPlHands();
+  allowThrghDice();
+  chckWin();
+  chngCrrntPl();
+}
+
 function removeSumDice() {
   allPlHands[currentPlayer - 1] = allPlHands[currentPlayer - 1].filter(
     (die) => die !== dice1 + dice2
@@ -84,14 +104,14 @@ function checkDiceInHand() {
   const hasDice1 = currentHand.includes(dice1);
   const hasDice2 = currentHand.includes(dice2);
   const hasSum = currentHand.includes(dice1 + dice2);
-  if (dice1 == dice2) {
+  if (dice1 == dice2 || !hasDice1 || !hasDice2) {
     document.getElementById("remove2Dice").disabled = true;
   }
-  document.getElementById("remove2Dice").disabled = !hasDice1 || !hasDice2;
   document.getElementById("removeSumDice").disabled = !hasSum;
-
   document.getElementById("skipTurn").disabled =
     (hasDice1 && hasDice2) || hasSum;
+  document.getElementById("remove1stDice").disabled=!hasDice1;
+  document.getElementById("remove2ndDice").disabled=!hasDice2;
 }
 
 function resetGame() {
