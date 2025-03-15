@@ -34,6 +34,7 @@ function rollDice() {
     ).innerText = `числа раздельно: ${dice1}, ${dice2}\n сумма: ${diceSum}`;
   }
   prohibitThrghDice();
+  checkDiceInHand();
 }
 
 function remove2Dice() {
@@ -70,6 +71,23 @@ function chckWin() {
 function chngCrrntPl() {
   currentPlayer = currentPlayer === 1 ? 2 : 1;
   document.getElementById("plTurn").innerText = `ход игрока ${currentPlayer}`;
+}
+
+function skipTurn() {
+  chngCrrntPl();
+  allowThrghDice();
+  document.getElementById("skipTurn").disabled = true;
+}
+
+function checkDiceInHand() {
+  const currentHand = allPlHands[currentPlayer - 1];
+  const hasDice1 = currentHand.includes(dice1);
+  const hasDice2 = currentHand.includes(dice2);
+  const hasSum = currentHand.includes(dice1 + dice2);
+  document.getElementById("skipTurn").disabled = hasDice1 || hasDice2 || hasSum;
+  document.getElementById("remove2Dice").disabled = document.getElementById(
+    "removeSumDice"
+  ).disabled = !hasDice1 && !hasDice2 && !hasSum;
 }
 
 function resetGame() {
