@@ -1,3 +1,7 @@
+p {
+  font-size: 1.5vw;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
@@ -7,13 +11,13 @@ body {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2vw;
   color: #007bff;
   margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 2vw;
   color: #6c757d;
   margin: 10px 0;
 }
@@ -49,7 +53,7 @@ button:disabled {
 }
 
 #plTurn {
-  font-size: 1.2em;
+  font-size: 2vw;
   margin: 20px 0;
 }
 

@@ -49,7 +49,7 @@ function remove2Dice() {
 
 function removeSumDice() {
   allPlHands[currentPlayer - 1] = allPlHands[currentPlayer - 1].filter(
-    (die) => die !== dice1+dice2
+    (die) => die !== dice1 + dice2
   );
 
   outPlHands();
@@ -75,8 +75,9 @@ function chngCrrntPl() {
 function resetGame() {
   currentPlayer = 1;
   fillPlsHands(allPlHands);
-  document.getElementById("pl1Dice").innerText = "-";
-  document.getElementById("pl2Dice").innerText = "-";
+  document.getElementById("pl1Dice").innerText = document.getElementById(
+    "pl2Dice"
+  ).innerText = "-";
   document.getElementById("plTurn").innerText = "ход игрока 1";
   outPlHands();
   allowThrghDice();
