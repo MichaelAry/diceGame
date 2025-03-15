@@ -84,10 +84,14 @@ function checkDiceInHand() {
   const hasDice1 = currentHand.includes(dice1);
   const hasDice2 = currentHand.includes(dice2);
   const hasSum = currentHand.includes(dice1 + dice2);
-  document.getElementById("skipTurn").disabled = hasDice1 || hasDice2 || hasSum;
-  document.getElementById("remove2Dice").disabled = document.getElementById(
-    "removeSumDice"
-  ).disabled = !hasDice1 && !hasDice2 && !hasSum;
+  if (dice1 == dice2) {
+    document.getElementById("remove2Dice").disabled = true;
+  }
+  document.getElementById("remove2Dice").disabled = !hasDice1 || !hasDice2;
+  document.getElementById("removeSumDice").disabled = !hasSum;
+
+  document.getElementById("skipTurn").disabled =
+    (hasDice1 && hasDice2) || hasSum;
 }
 
 function resetGame() {
