@@ -25,26 +25,21 @@ function rollDice() {
   diceSum = dice1 + dice2;
 
   if (currentPlayer === 1) {
-    document.getElementById("pl1Dice").innerText = `числа раздельно: ${dice1}, ${dice2}\n сумма: ${diceSum}`;
+    document.getElementById(
+      "pl1Dice"
+    ).innerText = `числа раздельно: ${dice1}, ${dice2}\n сумма: ${diceSum}`;
   } else {
-    document.getElementById("pl2Dice").innerText = `числа раздельно: ${dice1}, ${dice2}\n сумма: ${diceSum}`;
+    document.getElementById(
+      "pl2Dice"
+    ).innerText = `числа раздельно: ${dice1}, ${dice2}\n сумма: ${diceSum}`;
   }
   prohibitThrghDice();
 }
 
 function remove2Dice() {
-  if (allPlHands[currentPlayer - 1].indexOf(dice1) !== -1) {
-    allPlHands[currentPlayer - 1].splice(
-      allPlHands[currentPlayer - 1].indexOf(dice1),
-      1
-    );
-  }
-  if (allPlHands[currentPlayer - 1].indexOf(dice2) !== -1) {
-    allPlHands[currentPlayer - 1].splice(
-      allPlHands[currentPlayer - 1].indexOf(dice2),
-      1
-    );
-  }
+  allPlHands[currentPlayer - 1] = allPlHands[currentPlayer - 1].filter(
+    (die) => die !== dice1 && die !== dice2
+  );
 
   outPlHands();
   allowThrghDice();
@@ -53,13 +48,9 @@ function remove2Dice() {
 }
 
 function removeSumDice() {
-  if (allPlHands[currentPlayer - 1].indexOf(dice1 + dice2) !== -1) {
-    allPlHands[currentPlayer - 1].splice(
-      allPlHands[currentPlayer - 1].indexOf(dice1 + dice2),
-      1
-    );
-    document.getElementById("thrghDice").disabled = false;
-  }
+  allPlHands[currentPlayer - 1] = allPlHands[currentPlayer - 1].filter(
+    (die) => die !== dice1+dice2
+  );
 
   outPlHands();
   allowThrghDice();
