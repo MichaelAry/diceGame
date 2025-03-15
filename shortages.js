@@ -5,6 +5,7 @@ function outPlHands() {
 
 function allowThrghDice() {
   document.getElementById("thrghDice").disabled = false;
+  document.getElementById("skipTurn").disabled = true;
   document.getElementById("remove2Dice").disabled = true;
   document.getElementById("removeSumDice").disabled = true;
 }
@@ -13,4 +14,5 @@ function prohibitThrghDice() {
   document.getElementById("thrghDice").disabled = true;
   document.getElementById("remove2Dice").disabled = false;
   document.getElementById("removeSumDice").disabled = false;
+  document.getElementById("skipTurn").disabled = false;
 }
