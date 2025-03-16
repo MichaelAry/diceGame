@@ -8,8 +8,6 @@ function allowThrghDice() {
   document.getElementById("skipTurn").disabled = true;
   document.getElementById("remove2Dice").disabled = true;
   document.getElementById("removeSumDice").disabled = true;
-  document.getElementById("remove1stDice").disabled = true;
-  document.getElementById("remove2ndDice").disabled = true;
 }
 
 function prohibitThrghDice() {
@@ -17,6 +15,4 @@ function prohibitThrghDice() {
   document.getElementById("remove2Dice").disabled = false;
   document.getElementById("removeSumDice").disabled = false;
   document.getElementById("skipTurn").disabled = false;
-  document.getElementById("remove1stDice").disabled = false;
-  document.getElementById("remove2ndDice").disabled = false;
 }
